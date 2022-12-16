@@ -9,5 +9,10 @@ html {
 }
 
 .body {
+    resize: both;
+    overflow: auto;
+    background-image: url("../images/background.png"), url("../images/background.png");
     background-color: rgb(235, 235, 255);
+    background-repeat: no-repeat;
+    background-position: left, right;
 }
