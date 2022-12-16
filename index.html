@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/article.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <title>kantor</title>
+</head>
+
+<body class="body">
+    <article class="article">
+        <div class="container">
+            <h2 class="container__header">
+                Kalkulator walut
+            </h2>
+            <form class="form">
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Kurs walut</legend>
+                    <p class="form__select">
+                        <label for="rates"></label>
+                        <select name="rates" id="rates">
+                            <option hidden>wybierz walutę</option>
+                            <option value="eur">EUR/PLN</option>
+                            <option value="usd">USD/PLN</option>
+                            <option value="chf">CHF/PLN</option>
+                            <option value="gbp">GBP/PLN</option>
+                        </select>
+                    </p>
+                    <p><span class="form__labelText">kupno:</span><strong class="js-buyRate">N/A</strong> PLN</p>
+                    <p><span class="form__labelText">sprzedaż:</span><strong class="js-sellRate">N/A</strong> PLN</p>
+                </fieldset>
+
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Wymiana na złotówki</legend>
+                    <p>
+                        <label for="toPln"><span class="form__labelText">Posiadam:</span></label>
+                        <input class="js-foreignCurrency form__field" type="number" oninvalid="alert('Error')" placeholder="Wpisz kwotę" min="0" step="1">
+                        <select name="toPln" id="toPln">
+                            <option value="eurPln">EUR</option>
+                            <option value="usdPln">USD</option>
+                            <option value="chfPln">CHF</option>
+                            <option value="gbpPln">GBP</option>
+                        </select>
+                    </p>
+                    <p>
+                        <span class="form__labelText">Otrzymam:</span><strong class="js-buyPln">N/A</strong> PLN
+                    </p>
+                </fieldset>
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Wymiana na walutę obcą</legend>
+                    <p>
+                        <label><span class="form__labelText">Posiadam:</span></label>
+                        <input class="js-nationalCurrency form__field" type="number" placeholder="Wpisz kwotę" min="0" step="1">
+                        PLN
+                    </p>
+                    <p>
+                        <label for="fromPln"><span class="form__labelText">Otrzymam:</span><strong
+                                class="js-sellPln">N/A</strong></label>
+                        <select name="fromPln" id="fromPln">
+                            <option value="plnEur">EUR</option>
+                            <option value="plnUsd">USD</option>
+                            <option value="plnChf">CHF</option>
+                            <option value="plnGbp">GBP</option>
+                        </select>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </article>
+</body>
+
+</html>
