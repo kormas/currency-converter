@@ -1,4 +1,4 @@
-# currency-converter - kalkulator walut
+# currency converter - kalkulator walut
 
 ## demo
 
