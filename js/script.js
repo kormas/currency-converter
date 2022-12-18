@@ -1,8 +1,8 @@
 {
-    let showRates = () => {
-        let ratesElement = document.querySelector("#rates");
-        let buyElement = document.querySelector(".js-buyRate");
-        let sellElement = document.querySelector(".js-sellRate");
+    const showRates = () => {
+        const ratesElement = document.querySelector("#rates");
+        const buyElement = document.querySelector(".js-buyRate");
+        const sellElement = document.querySelector(".js-sellRate");
 
         const buyEur = 4.6751;
         const sellEur = 4.7041;
@@ -33,10 +33,10 @@
         }
     }
 
-    let calculateToPln = () => {
-        let toPlnElement = document.querySelector("#toPln");
-        let foreignElement = document.querySelector(".js-foreignCurrency");
-        let buyPlnElement = document.querySelector(".js-buyPln");
+    const calculateToPln = () => {
+        const toPlnElement = document.querySelector("#toPln");
+        const foreignElement = document.querySelector(".js-foreignCurrency");
+        const buyPlnElement = document.querySelector(".js-buyPln");
 
         const buyEur = 4.6751;
         const buyUsd = 4.4260;
@@ -67,10 +67,10 @@
         }
     }
 
-    let calculateToOther = () => {
-        let fromPlnElement = document.querySelector("#fromPln");
-        let nationalElement = document.querySelector(".js-nationalCurrency");
-        let sellPlnElement = document.querySelector(".js-sellPln");
+    const calculateToOther = () => {
+        const fromPlnElement = document.querySelector("#fromPln");
+        const nationalElement = document.querySelector(".js-nationalCurrency");
+        const sellPlnElement = document.querySelector(".js-sellPln");
 
         const sellEur = 4.7041;
         const sellUsd = 4.4530;
@@ -101,9 +101,9 @@
         }
     }
 
-    let validateNumber = () => {
-        let buyPlnElement = document.querySelector(".js-buyPln");
-        let sellPlnElement = document.querySelector(".js-sellPln");
+    const validateNumber = () => {
+        const buyPlnElement = document.querySelector(".js-buyPln");
+        const sellPlnElement = document.querySelector(".js-sellPln");
 
         if (Math.sign(foreign) === -1) {
             buyPlnElement.innerText = "błąd - liczba ujemna";
@@ -117,8 +117,8 @@
 
     }
 
-    let init = () => {
-        let formElement = document.querySelector(".form");
+    const init = () => {
+        const formElement = document.querySelector(".form");
 
         formElement.addEventListener("input", showRates);
         formElement.addEventListener("input", calculateToPln);
