@@ -13,87 +13,97 @@
         const buyElement = document.querySelector(".js-buyRate");
         const sellElement = document.querySelector(".js-sellRate");
 
+        let buy;
+        let sell;
+
         switch (ratesElement.value) {
             case "eur":
-                buyElement.innerText = buyEur.toFixed(2);
-                sellElement.innerText = sellEur.toFixed(2);
+                buy = buyEur.toFixed(2);
+                sell = sellEur.toFixed(2);
                 break;
             case "usd":
-                buyElement.innerText = buyUsd.toFixed(2);
-                sellElement.innerText = sellUsd.toFixed(2);
+                buy = buyUsd.toFixed(2);
+                sell = sellUsd.toFixed(2);
                 break;
             case "chf":
-                buyElement.innerText = buyChf.toFixed(2);
-                sellElement.innerText = sellChf.toFixed(2);
+                buy = buyChf.toFixed(2);
+                sell = sellChf.toFixed(2);
                 break;
             case "gbp":
-                buyElement.innerText = buyGbp.toFixed(2);
-                sellElement.innerText = sellGbp.toFixed(2);
+                buy = buyGbp.toFixed(2);
+                sell = sellGbp.toFixed(2);
                 break;
+            default:
+                buy = 'N/A';
+                sell = 'N/A';
         }
+        buyElement.innerText = buy;
+        sellElement.innerText = sell;
     }
 
     const calculateToPln = () => {
         const toPlnElement = document.querySelector("#toPln");
-        const foreignElement = document.querySelector(".js-foreignCurrency");
+        const foreign = document.querySelector(".js-foreignCurrency").value;
         const buyPlnElement = document.querySelector(".js-buyPln");
+
+        let buyPln;
+        let sale;
 
         switch (toPlnElement.value) {
             case "eurPln":
-                foreign = foreignElement.value;
                 sale = foreign * buyEur;
-                buyPlnElement.innerText = sale.toFixed(2);
+                buyPln = sale.toFixed(2);
                 break;
             case "usdPln":
-                foreign = foreignElement.value;
                 sale = foreign * buyUsd;
-                buyPlnElement.innerText = sale.toFixed(2);
+                buyPln = sale.toFixed(2);
                 break;
             case "chfPln":
-                foreign = foreignElement.value;
                 sale = foreign * buyChf;
-                buyPlnElement.innerText = sale.toFixed(2);
+                buyPln = sale.toFixed(2);
                 break;
             case "gbpPln":
-                foreign = foreignElement.value;
                 sale = foreign * buyGbp;
-                buyPlnElement.innerText = sale.toFixed(2);
+                buyPln = sale.toFixed(2);
                 break;
         }
+        buyPlnElement.innerText = buyPln;
     }
 
     const calculateToOther = () => {
         const fromPlnElement = document.querySelector("#fromPln");
-        const nationalElement = document.querySelector(".js-nationalCurrency");
+        const national = document.querySelector(".js-nationalCurrency").value;
         const sellPlnElement = document.querySelector(".js-sellPln");
+
+        let sellPln;
+        let purchase;
 
         switch (fromPlnElement.value) {
             case "plnEur":
-                national = nationalElement.value;
                 purchase = national / sellEur;
-                sellPlnElement.innerText = purchase.toFixed(2);
+                sellPln = purchase.toFixed(2);
                 break;
             case "plnUsd":
-                national = nationalElement.value;
                 purchase = national / sellUsd;
-                sellPlnElement.innerText = purchase.toFixed(2);
+                sellPln = purchase.toFixed(2);
                 break;
             case "plnChf":
-                national = nationalElement.value;
                 purchase = national / sellChf;
-                sellPlnElement.innerText = purchase.toFixed(2);
+                sellPln = purchase.toFixed(2);
                 break;
             case "plnGbp":
-                national = nationalElement.value;
                 purchase = national / sellGbp;
-                sellPlnElement.innerText = purchase.toFixed(2);
+                sellPln = purchase.toFixed(2);
                 break;
         }
+        sellPlnElement.innerText = sellPln;
     }
 
     const validateNumber = () => {
         const buyPlnElement = document.querySelector(".js-buyPln");
         const sellPlnElement = document.querySelector(".js-sellPln");
+        const foreign = document.querySelector(".js-foreignCurrency").value;
+        const national = document.querySelector(".js-nationalCurrency").value;
 
         if (Math.sign(foreign) === -1) {
             buyPlnElement.innerText = "błąd - liczba ujemna";
