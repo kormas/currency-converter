@@ -1,17 +1,17 @@
 {
+    const buyEur = 4.6751;
+    const sellEur = 4.7041;
+    const buyUsd = 4.4260;
+    const sellUsd = 4.4530;
+    const buyChf = 4.7316;
+    const sellChf = 4.7626;
+    const buyGbp = 5.4343;
+    const sellGbp = 5.4743;
+
     const showRates = () => {
         const ratesElement = document.querySelector("#rates");
         const buyElement = document.querySelector(".js-buyRate");
         const sellElement = document.querySelector(".js-sellRate");
-
-        const buyEur = 4.6751;
-        const sellEur = 4.7041;
-        const buyUsd = 4.4260;
-        const sellUsd = 4.4530;
-        const buyChf = 4.7316;
-        const sellChf = 4.7626;
-        const buyGbp = 5.4343;
-        const sellGbp = 5.4743;
 
         switch (ratesElement.value) {
             case "eur":
@@ -37,11 +37,6 @@
         const toPlnElement = document.querySelector("#toPln");
         const foreignElement = document.querySelector(".js-foreignCurrency");
         const buyPlnElement = document.querySelector(".js-buyPln");
-
-        const buyEur = 4.6751;
-        const buyUsd = 4.4260;
-        const buyChf = 4.7316;
-        const buyGbp = 5.4343;
 
         switch (toPlnElement.value) {
             case "eurPln":
@@ -71,11 +66,6 @@
         const fromPlnElement = document.querySelector("#fromPln");
         const nationalElement = document.querySelector(".js-nationalCurrency");
         const sellPlnElement = document.querySelector(".js-sellPln");
-
-        const sellEur = 4.7041;
-        const sellUsd = 4.4530;
-        const sellChf = 4.7626;
-        const sellGbp = 5.4743;
 
         switch (fromPlnElement.value) {
             case "plnEur":
@@ -114,7 +104,6 @@
             sellPlnElement.innerText = "błąd - liczba ujemna";
             alert("Wykryto liczbę ujemną! Wpisujemy tylko liczby dodatnie.");
         }
-
     }
 
     const init = () => {
