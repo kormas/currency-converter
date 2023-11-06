@@ -1,12 +1,25 @@
 {
-    const buyEur = 4.6751;
-    const sellEur = 4.7041;
-    const buyUsd = 4.4260;
-    const sellUsd = 4.4530;
-    const buyChf = 4.7316;
-    const sellChf = 4.7626;
-    const buyGbp = 5.4343;
-    const sellGbp = 5.4743;
+    const currencies = {
+        eur: {
+            buy: 4.6751,
+            sell: 4.7041
+        },
+
+        usd: {
+            buy: 4.4260,
+            sell: 4.4530
+        },
+
+        chf: {
+            buy: 4.7316,
+            sell: 4.7626
+        },
+
+        gbp: {
+            buy: 5.4343,
+            sell: 5.4743
+        }
+    };
 
     const showRates = () => {
         const ratesElement = document.querySelector("#rates");
@@ -18,20 +31,20 @@
 
         switch (ratesElement.value) {
             case "eur":
-                buy = buyEur.toFixed(2);
-                sell = sellEur.toFixed(2);
+                buy = currencies.eur.buy.toFixed(2);
+                sell = currencies.eur.sell.toFixed(2);
                 break;
             case "usd":
-                buy = buyUsd.toFixed(2);
-                sell = sellUsd.toFixed(2);
+                buy = currencies.usd.buy.toFixed(2);
+                sell = currencies.usd.sell.toFixed(2);
                 break;
             case "chf":
-                buy = buyChf.toFixed(2);
-                sell = sellChf.toFixed(2);
+                buy = currencies.chf.buy.toFixed(2);
+                sell = currencies.chf.sell.toFixed(2);
                 break;
             case "gbp":
-                buy = buyGbp.toFixed(2);
-                sell = sellGbp.toFixed(2);
+                buy = currencies.gbp.buy.toFixed(2);
+                sell = currencies.gbp.sell.toFixed(2);
                 break;
             default:
                 buy = 'N/A';
@@ -51,19 +64,19 @@
 
         switch (toPlnElement.value) {
             case "eurPln":
-                sale = foreign * buyEur;
+                sale = foreign * currencies.eur.buy;
                 buyPln = sale.toFixed(2);
                 break;
             case "usdPln":
-                sale = foreign * buyUsd;
+                sale = foreign * currencies.usd.buy;
                 buyPln = sale.toFixed(2);
                 break;
             case "chfPln":
-                sale = foreign * buyChf;
+                sale = foreign * currencies.chf.buy;
                 buyPln = sale.toFixed(2);
                 break;
             case "gbpPln":
-                sale = foreign * buyGbp;
+                sale = foreign * currencies.gbp.buy;
                 buyPln = sale.toFixed(2);
                 break;
         }
@@ -80,19 +93,19 @@
 
         switch (fromPlnElement.value) {
             case "plnEur":
-                purchase = national / sellEur;
+                purchase = national / currencies.eur.sell;
                 sellPln = purchase.toFixed(2);
                 break;
             case "plnUsd":
-                purchase = national / sellUsd;
+                purchase = national / currencies.usd.sell;
                 sellPln = purchase.toFixed(2);
                 break;
             case "plnChf":
-                purchase = national / sellChf;
+                purchase = national / currencies.chf.sell;
                 sellPln = purchase.toFixed(2);
                 break;
             case "plnGbp":
-                purchase = national / sellGbp;
+                purchase = national / currencies.gbp.sell;
                 sellPln = purchase.toFixed(2);
                 break;
         }
@@ -127,105 +140,3 @@
 
     init();
 }
-
-
-// let formElement = document.querySelector(".form");
-
-// let ratesElement = document.querySelector("#rates");
-// let buyElement = document.querySelector(".js-buyRate");
-// let sellElement = document.querySelector(".js-sellRate");
-
-// let foreignElement = document.querySelector(".js-foreignCurrency");
-// let toPlnElement = document.querySelector("#toPln");
-// let buyPlnElement = document.querySelector(".js-buyPln");
-
-// let nationalElement = document.querySelector(".js-nationalCurrency");
-// let fromPlnElement = document.querySelector("#fromPln");
-// let sellPlnElement = document.querySelector(".js-sellPln");
-
-// buyEur = 4.6751;
-// sellEur = 4.7041;
-// buyUsd = 4.4260;
-// sellUsd = 4.4530;
-// buyChf = 4.7316;
-// sellChf = 4.7626;
-// buyGbp = 5.4343;
-// sellGbp = 5.4743;
-
-// formElement.addEventListener("input", () => {
-//     switch (ratesElement.value) {
-//         case "eur":
-//             buyElement.innerText = buyEur.toFixed(2);
-//             sellElement.innerText = sellEur.toFixed(2);
-//             break;
-//         case "usd":
-//             buyElement.innerText = buyUsd.toFixed(2);
-//             sellElement.innerText = sellUsd.toFixed(2);
-//             break;
-//         case "chf":
-//             buyElement.innerText = buyChf.toFixed(2);
-//             sellElement.innerText = sellChf.toFixed(2);
-//             break;
-//         case "gbp":
-//             buyElement.innerText = buyGbp.toFixed(2);
-//             sellElement.innerText = sellGbp.toFixed(2);
-//             break;
-//     };
-
-//     switch (toPlnElement.value) {
-//         case "eurPln":
-//             foreign = foreignElement.value;
-//             sale = foreign * buyEur;
-//             buyPlnElement.innerText = sale.toFixed(2);
-//             break;
-//         case "usdPln":
-//             foreign = foreignElement.value;
-//             sale = foreign * buyUsd;
-//             buyPlnElement.innerText = sale.toFixed(2);
-//             break;
-//         case "chfPln":
-//             foreign = foreignElement.value;
-//             sale = foreign * buyChf;
-//             buyPlnElement.innerText = sale.toFixed(2);
-//             break;
-//         case "gbpPln":
-//             foreign = foreignElement.value;
-//             sale = foreign * buyGbp;
-//             buyPlnElement.innerText = sale.toFixed(2);
-//             break;
-//     };
-
-//     if (Math.sign(foreign) === -1) {
-//         buyPlnElement.innerText = "błąd - liczba ujemna";
-//         alert("Wykryto liczbę ujemną! Wpisujemy tylko liczby dodatnie.");
-//     }
-
-//     switch (fromPlnElement.value) {
-//         case "plnEur":
-//             national = nationalElement.value;
-//             purchase = national / sellEur;
-//             sellPlnElement.innerText = purchase.toFixed(2);
-//             break;
-//         case "plnUsd":
-//             national = nationalElement.value;
-//             purchase = national / sellUsd;
-//             sellPlnElement.innerText = purchase.toFixed(2);
-//             break;
-//         case "plnChf":
-//             national = nationalElement.value;
-//             purchase = national / sellChf;
-//             sellPlnElement.innerText = purchase.toFixed(2);
-//             break;
-//         case "plnGbp":
-//             national = nationalElement.value;
-//             purchase = national / sellGbp;
-//             sellPlnElement.innerText = purchase.toFixed(2);
-//             break;
-//     }
-
-//     if (Math.sign(national) === -1) {
-//         sellPlnElement.innerText = "błąd - liczba ujemna";
-//         alert("Wykryto liczbę ujemną! Wpisujemy tylko liczby dodatnie.");
-//     }
-
-// })
