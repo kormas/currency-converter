@@ -1,23 +1,23 @@
 {
     const currencies = {
         eur: {
-            buy: 4.6751,
-            sell: 4.7041
+            buy: 4.4556,
+            sell: 4.4781
         },
 
         usd: {
-            buy: 4.4260,
-            sell: 4.4530
+            buy: 4.1483,
+            sell: 4.1708
         },
 
         chf: {
-            buy: 4.7316,
-            sell: 4.7626
+            buy: 4.6205,
+            sell: 4.6419
         },
 
         gbp: {
-            buy: 5.4343,
-            sell: 5.4743
+            buy: 5.1410,
+            sell: 5.1658
         }
     };
 
