@@ -45,27 +45,30 @@
 
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Wymiana na złotówki</legend>
-
-                <label for="amountToPln"><span class="form__labelText">Posiadam:</span></label>
-                <input class="js-foreignCurrency form__field" type="number" id="amountToPln" oninvalid="alert('Error')"
-                    placeholder="Wpisz kwotę" min="0" step="1">
-                <select name="toPln" id="toPln">
-                    <option value="eurPln">EUR</option>
-                    <option value="usdPln">USD</option>
-                    <option value="chfPln">CHF</option>
-                    <option value="gbpPln">GBP</option>
-                </select>
-
+                <p class="form__media">
+                    <label for="amountToPln"><span class="form__labelText">Posiadam:</span></label>
+                    <input class="js-foreignCurrency form__field" type="number" id="amountToPln"
+                        oninvalid="alert('Error')" placeholder="Wpisz kwotę" min="0" step="1">
+                    <select name="toPln" id="toPln">
+                        <option value="eurPln">EUR</option>
+                        <option value="usdPln">USD</option>
+                        <option value="chfPln">CHF</option>
+                        <option value="gbpPln">GBP</option>
+                    </select>
+                </p>
                 <p>
                     <span class="form__labelText">Otrzymam:</span><strong class="js-buyPln">N/A</strong> PLN
                 </p>
             </fieldset>
+
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Wymiana na walutę obcą</legend>
-                <label for="amountFromPln"><span class="form__labelText">Posiadam:</span></label>
-                <input class="js-nationalCurrency form__field" type="number" id="amountFromPln"
-                    placeholder="Wpisz kwotę" min="0" step="1">
-                <span>PLN</span>
+                <p class="form__media">
+                    <label for="amountFromPln"><span class="form__labelText">Posiadam:</span></label>
+                    <input class="js-nationalCurrency form__field" type="number" id="amountFromPln"
+                        placeholder="Wpisz kwotę" min="0" step="1">
+                    <span>PLN</span>
+                </p>
                 <p>
                     <label for="fromPln"><span class="form__labelText">Otrzymam:</span><strong
                             class="js-sellPln">N/A</strong></label>

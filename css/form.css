@@ -7,21 +7,9 @@
     display: inline-block;
 }
 
-.form__field {
-    border: 2px solid black;
-    padding: 5px;
-    margin: 10px 0;
-    width: 250px;
-    border-radius: 5px;
-}
-
-.form__field:invalid {
-    background-color: rgb(255, 121, 121);
-}
-
 .form__fieldset {
     background-color: #ffffff;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: 1px solid #323232;
     border-radius: 5px;
     margin: 10px 0 60px;
@@ -35,8 +23,20 @@
     border-radius: 5px;
 }
 
+.form__field {
+    border: 2px solid black;
+    padding: 5px;
+    margin: 5px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+.form__field:invalid {
+    background-color: rgb(255, 121, 121);
+}
+
 @media (max-width: 525px) {
-    .form__fieldset {
+    .form__media {
         display: flex;
         align-items: center;
         flex-direction: column;
