@@ -26,7 +26,7 @@
 .form__field {
     border: 2px solid black;
     padding: 5px;
-    margin: 5px;
+    margin: 5px 0;
     width: 250px;
     border-radius: 5px;
 }
@@ -35,7 +35,7 @@
     background-color: rgb(255, 121, 121);
 }
 
-@media (max-width: 525px) {
+@media (max-width: 530px) {
     .form__media {
         display: flex;
         align-items: center;
