@@ -8,7 +8,7 @@ html {
     box-sizing: inherit;
 }
 
-.body {
+body {
     resize: both;
     overflow: auto;
     background-image: url("../images/background.png"), url("../images/background.png");

@@ -10,6 +10,7 @@
 .form__field {
     border: 2px solid black;
     padding: 5px;
+    margin: 10px 0;
     width: 250px;
     border-radius: 5px;
 }
@@ -23,12 +24,25 @@
     padding: 5px 20px;
     border: 1px solid #323232;
     border-radius: 5px;
-    margin: 10px 0 60px;   
+    margin: 10px 0 60px;
 }
 
 .form__legend {
     background-color: #2b4ba4;
     color: white;
     padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
+}
+
+@media (max-width: 525px) {
+    .form__fieldset {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form__legend {
+        text-align: center;
+    }
 }
